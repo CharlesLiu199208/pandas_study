@@ -59,13 +59,14 @@ def GePass_m(nu,ty, som):
     # print(li)
     cho = 1
     passcode_list = []
-    while cho > int(som):
+    while cho <= int(som):
         passcode = ''
         for i in range(int(nu)):
             passcode += random.choice(li)
-            print(passcode)
+            # print(passcode)
         passcode_list.append(passcode)
         cho += 1
+    # print(passcode_list)
     return passcode_list
 
 
@@ -73,6 +74,6 @@ num = input('请输入你想生成密码的位数:')
 type = input('请输入你想生成密码的类型，1：纯数字；2：数字加字幕；3数字加字母加字符：')
 sum = input('请输入你想生成密码的个数：')
 if int(sum) > 1 :
-    GePass_m(num,type,sum)
+    print(GePass_m(num,type,sum))
 else:
- GePass(num,type)
+    print(GePass(num,type))
